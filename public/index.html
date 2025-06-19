@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8" />
+    <title>Follow Your Dreams</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="sketch.js"></script>
+    
+  </head>
+  <body>
+    
+    <div id="Title">Follow your dreams OR Follow society?</div>
+    <div id="button">
+      <div id= "sections">Ενότητες:</div>
+      <button id="sketchbutton" onclick="document.getElementById('first').scrollIntoView(
+      { behavior: 'smooth' });">
+           Έρευνα
+         </button>
+      <button id="instructionsbutton" onclick="document.getElementById('instructions').scrollIntoView(
+      {behavior: 'smooth'  });">
+          Οδηγίες
+         </button>
+    </div>
+
+
+    <div id="inspiration">
+      <div class="text-block">
+       <div id="title1">
+       ΙΔΕΑ - ΕΜΠΝΕΥΣΗ
+       </div>
+       <div id="text1">
+        <p>Πηγή έμπνευσης αποτέλεσε το έργο "WHAT MADE ME" της Dorota Grabowska. </p>
+        <p>Το χαρακτηριστικό του έργου που αξιοποιήσαμε στην εργασία μας είναι 
+        ο συνδυασμός της τέχνης και της έρευνας, καθώς σκοπός μας είναι να εξάγουμε
+        συμπεράσματα αναφορικά με την επαγγελματική πορεία των ανθρώπων, αλλά και
+        το πόσοι τελικά ασκούν ή όχι το επάγγελμα των ονείρων τους. </p>
+       </div>
+      </div>
+      <div id="sketch1">
+        <img src="photos/whatmademe1.jpg" alt="Whatmademe1 Image" />
+      </div>
+    </div>
+
+
+    <div id="instructions">
+      <div id="sketch2">
+        <img src="photos/lines.png" alt="Lines Image" />
+        <img src="photos/room with balloons.png" alt="Room with balloons Image" />
+      </div>
+      <div id="text-block">
+        <div id="title2">
+        ΕΡΓΟ
+        </div>
+        <div id="text">
+        <div id="subtitle2">ΟΔΗΓΙΕΣ</div>
+        <p> 1. Παρακαλούμε αρχικά να συμπληρώσετε το <a href="https://forms.gle/u8td9HrksM6qyGNU6" 
+        target="_blank"> ερωτηματολόγιο</a> από το οποίο θα εξάγουμε την έρευνά μας.</p>
+        <p> 2. Παρακάτω βρίσκεται ο καμβάς, ο οποίος θα πάρει μορφή από τις απαντήσεις σας 
+        και θα αποτελέσει ένα καλλιτεχνικό έργο. </p>
+        <p> 3. Ο καθένας θα σχεδιάσει την επαγγελματική του πορεία πάνω στον καμβά με τον εξής τρόπο:</p>
+        <p> a. Πρώτα επιλέγετε το βιολογικό σας φύλο πατώντας το αντίστοιχο κουμπί.</p>
+        <p> b. Στην συνέχεια απαντάτε στην ερώτηση "Με τι έχεις ασχοληθεί στη ζωή σου;" συνδέοντας
+        τα αντίστοιχα επαγγέλματα (είναι τοποθετημένα σε αλφαβητική σειρά ανά στήλη, με τελευταία
+        ιδιότητα αυτήν του ανέργου). Θα πρέπει να επιλέξετε τα επαγγέλματα με τα οποία έχετε ασχοληθεί
+        - σε πρακτικό ή και σε μαθησιακό επίπεδο - κλικάροντας τις αντίστοιχες τελείες.</p>
+        <p> c. Τέλος, απαντάτε στην ερώτηση “Ποιος είναι ο πραγματικός σου στόχος;”. Ακολουθείτε
+        την ίδια διαδικασία με πριν επιλέγοντας αυτήν τη φορά τα ιδανικά επαγγέλματα για εσάς.</p>
+        <p>Πρακτικά κλικάροντας δύο τελείες δημιουργείται μία γραμμή</p>
+        <p>Παράδειγμα φοιτητή: Έστω ότι κάποιος σπουδάζει πολιτικός μηχανικός και παράλληλα
+        δουλεύει ως μπάρμαν, αλλά θα ήθελε να είναι αρχιτέκτονας.</p>
+        <p>πολιτικός μηχανικός - μπάρμαν ⟶ αρχιτέκτονας</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div id="questions">
+      <div id="first">"Ποιό/Ποιά είναι το/τα επαγγέλμα/-τα σου;"</div>
+      <div id="buttons"></div>
+      <div id="second">"Ποιός είναι ο πραγματικός σου στόχος;"</div>
+    </div>
+
+    <div id="sketch"></div>
+
+    <div id="banner">
+      <div id="texts">
+        <div id="title"> 
+          Final Project: Follow your dreams OR follow society?
+        </div>
+        <div id="class">
+          ARCH 4342 ΠΛΗΡΟΦΟΡΙΚΗ: Υπολογιστικές Προσεγγίσεις στις Δημιουργικές Τέχνες και Επιστήμες
+        </div>
+        <div id="participants">
+          Βικτώρια Καλαμπαλή, Μαριάννα Χριστοπούλου, Ευαγγελία Πιπανό
+        </div>
+      </div>
+        <div id="photo">
+        <img src="photos/σήμα.png" alt="Φωτογραφία" />
+        </div>
+    </div>
+  </body>
+</html>

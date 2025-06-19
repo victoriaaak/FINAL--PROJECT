@@ -1,0 +1,245 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(218, 214, 214);
+}
+canvas{
+  display: block;
+}
+#button{
+  display: flex;
+  gap: 1px;
+  background-color: rgba(146,191,177,0.3);
+ }
+ #sections{
+ margin: auto;
+ margin-left: 20px;
+ justify-content: center;
+ align-items: left;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size:25px;
+ }
+ #sketchbutton{
+color:rgb(166,28,60);
+background-color:transparent;
+border: 1px solid #92BFB1;
+border-radius: 4px;
+display: flex;
+vertical-align: middle;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+padding: 10px;
+margin: auto;
+cursor: pointer;
+transition-duration: 0.45s;
+} 
+#sketchbutton:hover{
+background-color: rgba(146,191,177);
+}
+#instructionsbutton{
+color: rgb(166,28,60);
+background-color:transparent;
+border: 1px solid #92BFB1;
+border-radius: 4px;
+display: flex;
+vertical-align: middle;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+padding: 10px;
+margin: auto;
+cursor: pointer;
+transition-duration: 0.45s;
+} 
+#instructionsbutton:hover{
+background-color: rgba(146,191,177);
+}
+#inspiration {
+display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width:1400px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  box-sizing:border-box;
+}
+text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+#title1 {
+text-align: center;
+font-size:28px;
+font-weight: bold;
+color: rgb(166,28,60);
+font-family:Arial, Helvetica, sans-serif;
+margin-bottom:10px;
+}
+#text1{
+text-align: justify;
+font-size: 20px;
+font-family: Arial, Helvetica, sans-serif;
+max-width: 700px; 
+}
+
+#sketch1 {
+flex: 1;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+padding-left: 40px;
+}
+
+#instructions{
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width:1400px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  box-sizing:border-box;
+}
+#sketch2{
+  flex:1;
+  display: flex;
+  flex-direction:column ;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 40px; 
+  gap:20px;
+}
+text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-right:30px;
+  box-sizing:border-box;
+}
+#title2{
+text-align: center;
+font-size:28px;
+font-weight: bold;
+color: rgb(166,28,60);
+font-family:Arial, Helvetica, sans-serif;
+margin-bottom:10px;
+}
+#subtitle2{
+text-align:justify;
+font-size:28px;
+font-weight: bold;
+color: rgb(166,28,60);
+font-family:Arial, Helvetica, sans-serif;
+margin-bottom:10px;
+}
+#a{
+color: rgb(166,28,60);
+text-decoration: underline;
+}
+#a:hover{
+text-decoration:none;
+}
+#text{
+  text-align: justify;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 700px;
+}
+
+#Title{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 40px;
+margin-top: 20px;
+margin-bottom: 60px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(166,28,60);
+font-weight: bold;}
+#sketch {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#buttons{
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+#first {
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(166,28,60);
+font-weight: bold;
+}
+#second{
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(166,28,60);
+font-weight: bold;
+
+}
+#questions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  font-weight: bold;
+}
+#1{
+   flex-wrap: wrap;
+  background-color: rgba(146,191,177,0.5);
+  gap: 20px;
+}
+#banner{
+  position: relative;
+  background-color: rgba(146,191,177,0.5);
+  padding: 20px;
+}
+#title{
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  color:rgb(166,28,60);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  
+}
+#class{
+  display: flex;
+  justify-content: left;
+  color: rgb(166,28,60);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+   margin-bottom: 30px;
+}
+#participants{
+  display: flex;
+  justify-content: left;
+  color: rgb(166,28,60);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#photo{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+}
