@@ -1,65 +1,76 @@
+// καλούμε την library της express
 const express = require('express');
+// την βαζουμε σε μια μεταβλητή app
 const app = express();
 const http = require('http');
+// καλούμε και την Library της socket.io
 const { Server } = require('socket.io');
 const fs = require('fs');
 const path = require('path');
-
+// ορίζουμε local path για local server
 const port = process.env.PORT || 3000;
+// ορίζουμε και για live server
 const server = http.createServer(app);
 const io = new Server(server);
 
-// 🔒 Απόλυτο path προς το lines.json
+// path για το lines.json αρχείο
 const linesFile = path.join(__dirname, 'lines.json');
 
-// 🗂 Αρχικοποίηση πίνακα για τις γραμμές
+//αρχικοποίηση γραμμών
 let allLines = [];
 
-// ✅ Φόρτωσε τις γραμμές από το αρχείο (αν υπάρχει)
+// φόρτωση γραμμών( αν υπάρχουν)
 if (fs.existsSync(linesFile)) {
   try {
     const data = fs.readFileSync(linesFile, 'utf8');
     allLines = JSON.parse(data);
+// Εάν υπάρχουν γραμμές να βγάλει μύνημα πως τις πήρε
     console.log(`✅ Loaded ${allLines.length} lines from lines.json`);
   } catch (err) {
+// Εάν δεν είχε γραμμές να βγάλει μύνημα πως δεν βρήκε το json
     console.error("❌ Failed to load lines.json:", err);
+// και δημιουργεί ένα πίνακα για να αποθηκεύσει τις επόμενες
     allLines = [];
   }
 } else {
+// αλλιώς αν δεν βρεί json αρχείο να φτιάξει ένα καινούργιο
   console.log("ℹ️ No lines.json found. Starting with empty line list.");
 }
 
-// 🎧 WebSocket σύνδεση
+// αν έχει καινούργια σύνδεση, γράψε μύνημα
 io.on('connection', (socket) => {
   console.log('🔌 New user connected');
 
-  // 👉 Στείλε τις παλιές γραμμές στον νέο client
+// στείλε τις γραμμές στον νέο χρήστη
   socket.emit('previousLines', allLines);
 
-  // 👉 Όταν κάποιος σχεδιάσει γραμμή
+// όταν κάποιος σχεδιάσει μια γραμμή, γράψε μύνημα
   socket.on('drawLine', (data) => {
     console.log('✏️ Received new line');
 
     allLines.push(data);
 
-    // ✍️ Αποθήκευση στο αρχείο
+    //αποθήκευση της γραμμής στο lines.json
     fs.writeFile(linesFile, JSON.stringify(allLines, null, 2), (err) => {
       if (err) {
+// Αν υπάρξει πρόβλημα γράψε μύνημα
         console.error("❌ Error writing to lines.json:", err);
       } else {
+//Αν αποθηκευτεί η γραμμή γράψε μύνημα
         console.log("✅ Line saved to lines.json");
       }
     });
 
-    // 📡 Στείλε τη γραμμή σε όλους εκτός από αυτόν που τη σχεδίασε
+    // Στείλε την γραμμή σε όλους εκτός απο αυτόν που την σχεδίασε
     socket.broadcast.emit('drawLine', data);
   });
 });
 
-// 🧱 Εξυπηρέτηση στατικών αρχείων από τον φάκελο public
+// πάρε τα στατικά αρχεία απο τον φάκελο public
 app.use(express.static('public'));
 
-// 🚀 Εκκίνηση server
+//Ξεκίνα τον σέρβερ
+// γράψε μύνημα που τρέχει ο σέρβερ
 server.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
 });

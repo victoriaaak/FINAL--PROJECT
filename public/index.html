@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="el">
   <head>
+<!--Βικτώρια Καλαμπαλη
+Μαριάννα Χριστοπούλου-->
     <meta charset="utf-8" />
+<!-- Τίτλος που εμφανίζεται στο tab-->
     <title>Follow Your Dreams</title>
+<!-- Link για το CSS αρχείο-->
     <link rel="stylesheet" type="text/css" href="style.css" />
+<!-- Link την βιβλιοθήκη της P5.js-->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/addons/p5.sound.min.js"></script>
+<!--Link την βιβλιοθήκη της socket.io-->
     <script src="/socket.io/socket.io.js"></script>
+<!--Link του sketch.js αρχείου μας-->
     <script src="sketch.js"></script>
     
   </head>
   <body>
-    
+<!-- Τίτλος-->
     <div id="Title">Follow your dreams OR Follow society?</div>
+<!-- Κουμπία για ευκολότερη πλοήγηση-->
     <div id="button">
+<!--Κουμπιά και τίτλος δίπλα ενότητες-->
       <div id= "sections">Ενότητες:</div>
       <button id="sketchbutton" onclick="document.getElementById('first').scrollIntoView(
       { behavior: 'smooth' });">
@@ -25,12 +34,14 @@
          </button>
     </div>
 
-
+<!-- Κουτί Έμπνευσης-->
     <div id="inspiration">
       <div class="text-block">
+<!-- Τίτλος-->
        <div id="title1">
        ΙΔΕΑ - ΕΜΠΝΕΥΣΗ
        </div>
+<!--Κείμενο-->
        <div id="text1">
         <p>Πηγή έμπνευσης αποτέλεσε το έργο "WHAT MADE ME" της Dorota Grabowska. </p>
         <p>Το χαρακτηριστικό του έργου που αξιοποιήσαμε στην εργασία μας είναι 
@@ -39,29 +50,34 @@
         το πόσοι τελικά ασκούν ή όχι το επάγγελμα των ονείρων τους. </p>
        </div>
       </div>
+<!--Φωτογραφίες-->
       <div id="sketch1">
         <img src="photos/whatmademe1.jpg" alt="Whatmademe1 Image" />
       </div>
     </div>
 
-
+<!-- Κουτί Οδηγιών-->
     <div id="instructions">
+<!-- Φωτογραφίες-->
       <div id="sketch2">
         <img src="photos/lines.png" alt="Lines Image" />
         <img src="photos/room with balloons.png" alt="Room with balloons Image" />
       </div>
       <div id="text-block">
+<!-- Τίτλος-->
         <div id="title2">
         ΕΡΓΟ
         </div>
         <div id="text">
+
         <div id="subtitle2">ΟΔΗΓΙΕΣ</div>
+<!--Κείμενο-->
         <p> 1. Παρακαλούμε αρχικά να συμπληρώσετε το <a href="https://forms.gle/u8td9HrksM6qyGNU6" 
         target="_blank"> ερωτηματολόγιο</a> από το οποίο θα εξάγουμε την έρευνά μας.</p>
         <p> 2. Παρακάτω βρίσκεται ο καμβάς, ο οποίος θα πάρει μορφή από τις απαντήσεις σας 
         και θα αποτελέσει ένα καλλιτεχνικό έργο. </p>
         <p> 3. Ο καθένας θα σχεδιάσει την επαγγελματική του πορεία πάνω στον καμβά με τον εξής τρόπο:</p>
-        <p> a. Πρώτα επιλέγετε το βιολογικό σας φύλο πατώντας το αντίστοιχο κουμπί.</p>
+        <p> a. Πρώτα επιλέγετε το ηλικιακό σας γκρουπ πατώντας το αντίστοιχο κουμπί.</p>
         <p> b. Στην συνέχεια απαντάτε στην ερώτηση "Με τι έχεις ασχοληθεί στη ζωή σου;" συνδέοντας
         τα αντίστοιχα επαγγέλματα (είναι τοποθετημένα σε αλφαβητική σειρά ανά στήλη, με τελευταία
         ιδιότητα αυτήν του ανέργου). Θα πρέπει να επιλέξετε τα επαγγέλματα με τα οποία έχετε ασχοληθεί
@@ -77,7 +93,7 @@
     </div>
 
     
-
+<!--Ερωτήσεις-->
     <div id="questions">
       <div id="first">"Ποιό/Ποιά είναι το/τα επαγγέλμα/-τα σου;"</div>
       <div id="buttons"></div>
@@ -85,7 +101,7 @@
     </div>
 
     <div id="sketch"></div>
-
+<!-- Banner κάτω με πληροφορίες-->
     <div id="banner">
       <div id="texts">
         <div id="title"> 
